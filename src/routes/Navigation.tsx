@@ -6,9 +6,10 @@ import {
   NavLink,
   Navigate,
 } from "react-router-dom";
+import Shopping from "../02-Component-patterns/Components/Shopping";
 
 import logo from "../logo.svg";
-import { routes } from "./routes";
+
 
 export const Navigation = () => {
   return (
@@ -19,28 +20,50 @@ export const Navigation = () => {
             <img width="200px" src={logo} alt="React Logo" />
 
             <ul>
-              {routes.map(({ id, to, name }) => (
-                <li key={id}>
+             
+                <li>
                   <NavLink
-                    to={to}
+                    to='/'
                     className={(navData) =>
                       navData.isActive ? "nav-active" : ""
                     }
                   >
-                    {name}
+                    Shopping
                   </NavLink>
                 </li>
-              ))}
+                <li>
+                  <NavLink
+                    to='/about'
+                    className={(navData) =>
+                      navData.isActive ? "nav-active" : ""
+                    }
+                  >
+                    About
+                  </NavLink>
+                </li>
+                <li>
+                  <NavLink
+                    to='/users'
+                    className={(navData) =>
+                      navData.isActive ? "nav-active" : ""
+                    }
+                  >
+                    Users
+                  </NavLink>
+                </li>
+
             </ul>
           </nav>
 
           <Routes>
             
-            {routes.map(({ id, path, Component }) => (
-              <Route key={id} path={path} element={<Component />} />
-            ))}
+           
+            <Route path='/' element={<Shopping/>} />
+            <Route path='/about' element={<h1>About</h1>} />
+            <Route path='/users' element={<h1>Users</h1>} />
+            
 
-            <Route path="/*" element={<Navigate to={routes[0].to} replace />} />
+            <Route path="/*" element={<Navigate to='/' replace />} />
           
           </Routes>
         </div>
