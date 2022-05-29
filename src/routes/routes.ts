@@ -2,6 +2,7 @@ import { lazy, LazyExoticComponent } from "react";
 
 
 type JSXComponent = () => JSX.Element;
+
 interface Route {
     to: string,
     path: string,
