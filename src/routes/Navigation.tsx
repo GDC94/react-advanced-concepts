@@ -6,7 +6,7 @@ import {
   NavLink,
   Navigate,
 } from "react-router-dom";
-import Shopping from "../02-Component-patterns/Components/Shopping";
+import Shopping from "../02-Component-patterns/Pages/Shopping";
 
 import logo from "../logo.svg";
 
