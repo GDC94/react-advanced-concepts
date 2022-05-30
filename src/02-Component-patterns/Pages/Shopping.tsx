@@ -1,13 +1,14 @@
 import ProductCard from "../Components/ProductCard";
 import img from "../assets/coffee-mug.png";
+import ProductImg from "../Components/ProductImg";
+import { ProductTitle } from "../Components/ProductTitle";
+import { ProductBottons } from "../Components/ProductBottons";
 
 const product = {
   id: 1,
   title: "Cafe Mock uno",
   img: img,
 };
-
-
 
 export default function Shopping() {
   return (
@@ -21,7 +22,11 @@ export default function Shopping() {
           flexWrap: "wrap",
         }}
       >
-        <ProductCard product={product} />
+        <ProductCard product={product}>
+          <ProductImg />
+          <ProductTitle />
+          <ProductBottons />
+        </ProductCard>
       </div>
     </div>
   );
