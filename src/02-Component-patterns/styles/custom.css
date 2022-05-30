@@ -11,3 +11,12 @@
   width: calc(100% - 20px);
   padding: 10px;
 }
+.shopping-kart {
+  position: 'fixed';
+  right: 10px;
+  top: 0;
+}
+
+.small {
+  width: 150px;
+}
