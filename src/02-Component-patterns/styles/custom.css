@@ -1,0 +1,13 @@
+.bg-dark {
+  background-color: rgb(34, 34, 34);
+}
+
+.text-white {
+  color: aliceblue;
+  font-weight: bold;
+}
+
+.img {
+  width: calc(100% - 20px);
+  padding: 10px;
+}

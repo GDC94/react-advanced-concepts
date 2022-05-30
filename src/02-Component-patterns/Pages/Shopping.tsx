@@ -3,6 +3,7 @@ import img from "../assets/coffee-mug.png";
 import ProductImg from "../Components/ProductImg";
 import { ProductTitle } from "../Components/ProductTitle";
 import { ProductBottons } from "../Components/ProductBottons";
+import '../styles/custom.css';
 
 const product = {
   id: 1,
@@ -22,9 +23,9 @@ export default function Shopping() {
           flexWrap: "wrap",
         }}
       >
-        <ProductCard product={product}>
-          <ProductImg />
-          <ProductTitle />
+        <ProductCard product={product} className='bg-dark'>
+          <ProductImg className='img' />
+          <ProductTitle className='text-white'/>
           <ProductBottons />
         </ProductCard>
       </div>
