@@ -14,3 +14,8 @@ export interface ContextValues {
     increaseBy: (value: number) => void;
     product: Product;
 }
+
+export interface onChangeArgs {
+    product:Product,
+    counter: number,
+}

@@ -22,15 +22,31 @@ const product2 = {
 const arrProducts: Product[] = [product1, product2];
 
 interface ProductInCart extends Product {
-  count: number;
+  counter: number;
 }
 
 export default function Shopping() {
   const [shoppingCart, setShoppingCart] = useState<{
     [key: string]: ProductInCart;
   }>({});
-  const onChangeProduct = () => {
-    console.log("hola perro");
+
+  const onChangeProduct = ({
+    counter,
+    product,
+  }: {
+    counter: number;
+    product: Product;
+  }) => {
+    setShoppingCart((prev) => {
+      if (counter === 0) {
+        const { [product.id]: toDelete, ...rest } = prev;
+        return rest;
+      }
+      return {
+        ...prev,
+        [product.id]: { ...product, counter },
+      };
+    });
   };
 
   return (
@@ -57,7 +73,8 @@ export default function Shopping() {
                 key={product.id}
                 product={product}
                 className="bg-dark"
-                onChange={() => onChangeProduct()}
+                onChange={onChangeProduct}
+                value={shoppingCart[product.id]?.counter || 0}
               >
                 <ProductImg className="img" />
                 <ProductTitle className="text-white" />
@@ -67,20 +84,19 @@ export default function Shopping() {
         </div>
 
         <div className="shopping-kart">
-          <ProductCard
-            product={product1}
-            className="bg-dark small"
-            onChange={() => onChangeProduct()}
-          >
-            <ProductImg className="img" />
-            <ProductTitle className="text-white" />
-            <ProductBottons />
-          </ProductCard>
-          <ProductCard product={product2} className="bg-dark small">
-            <ProductImg className="img" />
-            <ProductTitle className="text-white" />
-            <ProductBottons />
-          </ProductCard>
+          {Object.entries(shoppingCart).map(([key, product]) => (
+            <ProductCard
+              value={product.counter}
+              key={key}
+              product={product}
+              className="bg-dark small"
+              onChange={onChangeProduct}
+            >
+              <ProductImg className="img" />
+              
+              <ProductBottons   />
+            </ProductCard>
+          ))}
         </div>
       </div>
     </div>

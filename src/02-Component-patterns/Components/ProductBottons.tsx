@@ -4,6 +4,8 @@ import styles from "../styles/styles.module.css";
 
 export const ProductBottons = () => {
   const { increaseBy, count } = useContext(ProductContext);
+  
+  
 
   return (
     <div className={styles.buttonsContainer}>
