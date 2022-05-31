@@ -1,4 +1,5 @@
 import { lazy, LazyExoticComponent } from "react";
+import RegisterPage from "../03-Forms/Pages/RegisterPage";
 
 
 type JSXComponent = () => JSX.Element;
@@ -21,10 +22,10 @@ const LazyThree = lazy(() => import( /*webpackChunkName: LazyChunk-3*/  '../01-L
 
 export const routes: Route[] = [
     {
-        to: '/lazy1',
-        path: 'lazy1',
-        Component: LazyOne,
-        name: 'Lazyload 1',
+        to: '/register',
+        path: 'register',
+        Component: RegisterPage,
+        name: 'register-form',
         id: 1
     },
     {
