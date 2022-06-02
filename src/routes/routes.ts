@@ -1,4 +1,8 @@
 import { lazy, LazyExoticComponent } from "react";
+import FormikAbstract from "../03-Forms/Pages/FormikAbstract";
+import FormikBasicPage from "../03-Forms/Pages/FormikBasicPage";
+import FormikComponent from "../03-Forms/Pages/FormikComponent";
+import FormikYupPage from "../03-Forms/Pages/FormikYupPage";
 import RegisterPage from "../03-Forms/Pages/RegisterPage";
 
 
@@ -22,24 +26,31 @@ const LazyThree = lazy(() => import( /*webpackChunkName: LazyChunk-3*/  '../01-L
 
 export const routes: Route[] = [
     {
-        to: '/register',
-        path: 'register',
-        Component: RegisterPage,
-        name: 'register-form',
+        to: '/formik',
+        path: 'formik',
+        Component: FormikBasicPage,
+        name: 'form',
         id: 1
     },
     {
-        to: '/lazy2',
-        path: 'lazy2',
-        Component: LazyTwo,
-        name: 'Lazyload 2',
+        to: '/formik-yup',
+        path: 'formik-yup',
+        Component: FormikYupPage,
+        name: 'form-yup',
         id: 2
     },
     {
-        to: '/lazy3',
-        path: 'lazy3',
-        Component: LazyThree,
-        name: 'Lazyload 3',
+        to: '/formik-yup-component',
+        path: 'formik-yup-component',
+        Component: FormikComponent,
+        name: 'form-yup-component',
         id: 3
+    },
+    {
+        to: '/formik-yup-abstract',
+        path: 'formik-yup-abstract',
+        Component: FormikAbstract,
+        name: 'formik-yup-abstract',
+        id: 4
     }
 ]
