@@ -1,0 +1,51 @@
+[
+    {
+        "type": "input",
+        "name": "firstName",
+        "placeholder": "German",
+        "label": "firstName",
+        "value":  ""
+
+    },
+    {
+        "type": "input",
+        "name": "lastName",
+        "placeholder": "Derbes",
+        "label": "firstName",
+        "value":  ""
+
+    },
+    {
+        "type": "email",
+        "name": "email",
+        "placeholder": "email",
+        "label": "Tu correo",
+        "value":  ""
+
+    },
+    {
+        "type": "select",
+        "name": "jugador",
+        "label": "Tu jugador favorito",
+        "value":  "",
+        "options": [
+            {
+                "id": 1,
+                "label": "Messi"
+            },
+            {
+                "id": 12,
+                "label": "CR7"
+            },
+            {
+                "id": 3,
+                "label": "Maradona"
+            },
+            {
+                "id": 4,
+                "label": "Ronaldinho"
+            }
+        ]
+
+    }
+]
